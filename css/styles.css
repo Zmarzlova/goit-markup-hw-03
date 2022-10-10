@@ -5,25 +5,6 @@
   --additional-color: #ffffff;
 }
 
-p, 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
-h6 {
-  margin: 0;
-}
-
-ul, ol {
-  margin: 0;
-  padding-left: 0;
-}
-
-button {
-  cursor: pointer;
-}
-
 body {
   font-family: Roboto, sans-serif;
   color: var(--primery-text-color);
@@ -32,15 +13,97 @@ body {
   letter-spacing: 0.03em;
 }
 
-ul {
-  list-style: none;
+/* reset */
+html {
+  box-sizing: border-box;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+/* Стили для обнуления верхних отступов у элементов */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* обнуления базовых свойств у списков (ul) */
+ul, ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+/* Класс для обнуления базовых свойств у ссылок */
 .link {
   text-decoration: none;
+  color: inherit;
+}
+
+/* Свойства для корректного отображения картинок */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Свойства для обнуления курсива у address */
+
+address {
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* utils */
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 /* -------Header------- */
+
+.header{
+background-color: var(--additional-color);
+border-bottom: 1px solid #ECECEC;
+}
+.container-header{
+ display: flex;
+}
+
+.container-connect {
+  margin-left: auto;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+.header-nav-list{
+  display: flex;
+  gap: 50px;
+}
+
+.header-list {
+  display: flex;
+  gap: 50px;
+}
 .logo:hover,
 .logo:focus {
   color: var(--accent-color);
@@ -53,6 +116,8 @@ ul {
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  margin-right: 93px;
+  margin-left: auto;
 }
 
 .logo-header {
@@ -70,6 +135,8 @@ ul {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  display: inline-block;
+  padding: 32px 0;
 }
 
 .header-link:hover,
@@ -82,12 +149,17 @@ ul {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  display: inline-block;
+  padding-top: 32px;
 }
 
 /* -------Hero------- */
 
 .hero {
   background-color: #2f303a;
+  padding: 200px 0;
+  text-align: center;
+  display: block;
 }
 .hero-title {
   color: var(--additional-color);
@@ -97,6 +169,8 @@ ul {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  margin-bottom: 30px;
+  
 }
 
 .hero-button {
@@ -110,10 +184,23 @@ ul {
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
+  padding: 10px 32px;
+  min-width: 216px;
+  height: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  margin: 0 auto;
 }
-
 /* -------Features------- */
 
+.features{
+  background-color: #F5F5F5;
+}
+
+.features-list{
+  display: flex;
+  gap: 30px;
+}
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -132,14 +219,35 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
+.features-item{
+  width: 270px;
+}
 .features-text {
   line-height: 1.71;
 }
 
 /* -------Works------- */
 
+.works{
+  background-color: #F5F5F5;
+}
+
+.works-title{
+  margin-bottom: 50px;
+}
+
+.works-item{
+  width: calc((100% - 60px) / 3);
+  
+}
+
+.works-list{
+  display: flex;
+  gap: 30px;
+}
 .works-title,
 .team-title {
   color: var(--title-text-color);
@@ -151,6 +259,18 @@ ul {
 
 /* -------Team------- */
 
+.team{
+  background-color:#F5F4F5;
+}
+.team-list{
+  display: flex;
+  gap: 30px;
+}
+
+.team-title{
+  margin-bottom: 50px;
+
+}
 .team-title-secondary {
   color: var(--title-text-color);
   font-weight: 500;
@@ -158,8 +278,14 @@ ul {
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
+.team-item{
+  width: calc((100% - 90px) / 4);
+  height: 368px;
+}
 .team-text {
   font-size: 16px;
   line-height: 1.19;
@@ -169,6 +295,7 @@ ul {
 /* -------Footer------- */
 
 .footer {
+  padding: 60px 0;
   background-color: #2f303a;
 }
 .footer-link:hover,
@@ -176,6 +303,9 @@ ul {
   color: var(--accent-color);
 }
 
+.footer-list{
+  margin-top: 20px;
+}
 .logo-secondary {
   color: var(--additional-color);
 }
@@ -190,9 +320,19 @@ ul {
   line-height: 1.71;
   letter-spacing: 0.03em;
   font-style: normal;
+  margin-bottom: 9px;
 }
 
 /* -------Оформление Portfolio------- */
+
+.portfolio{
+background-color:var(--additional-color);
+}
+.filter-list{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
 
 .button:hover,
 .button:focus {
@@ -200,23 +340,48 @@ ul {
   background-color: var(--accent-color);
 }
 
+
 .button {
   color: var(--title-text-color);
   background: #f5f4fa;
   font-family: inherit;
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 6px 25px;
+  margin-bottom: 50px;
+  min-width: 73px;
+
 }
 
+.filter{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.filter-item{
+  width: calc((100% - 60px) / 3);
+}
+
+.filter-wrap{
+  padding: 20px 24px;
+  background-color: var(--additional-color);
+  border-right: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+  border-left: 1px solid #EEEEEE;
+}
 .filter-title {
   color: var(--title-text-color);
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  margin-bottom: 4px;
+  
 }
 
 .filter-text {
@@ -224,4 +389,5 @@ ul {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.03em;
+  
 }
