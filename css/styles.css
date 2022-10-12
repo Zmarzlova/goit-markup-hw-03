@@ -326,9 +326,10 @@ border-bottom: 1px solid #ECECEC;
   margin-top: 20px;
 }
 
-.footer-item{
+.footer-item:not(:last-child) {
   margin-bottom: 9px;
 }
+
 .logo-secondary {
   color: var(--additional-color);
 }
@@ -343,7 +344,6 @@ border-bottom: 1px solid #ECECEC;
   line-height: 1.71;
   letter-spacing: 0.03em;
   font-style: normal;
-  margin-bottom: 9px;
 }
 
 /* -------Оформление Portfolio------- */
